@@ -1,0 +1,110 @@
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: scale(1) translate(0px, 0px);
+  }
+  33% {
+    transform: scale(1.1) translate(40px, -20px);
+  }
+  66% {
+    transform: scale(0.9) translate(-20px, 40px);
+  }
+}
+
+.animate-blob {
+  animation: blob 15s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes bounce-right {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+.arrow-animation {
+  animation: bounce-right 1.5s ease-in-out infinite;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-animation {
+  animation: reveal 0.8s ease-out forwards;
+}
+
+.reveal-delay-300 {
+  animation-delay: 300ms;
+}
+
+.reveal-delay-600 {
+  animation-delay: 600ms;
+}
+
+@keyframes shine {
+  from {
+    background-position: 200% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+
+.shine-effect {
+  background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+} 
