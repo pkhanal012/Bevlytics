@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import ShakingButton from './ShakingButton';
 
 export default function StickyNavbar() {
@@ -51,7 +52,7 @@ export default function StickyNavbar() {
         `}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-16 py-4 sm:py-6 flex justify-between items-center text-white">
-          <div className="flex items-center">
+          <Link href="/" className="flex items-center cursor-pointer">
             <Image 
               src="/logo.png"
               alt="Bevlytics Logo"
@@ -59,7 +60,7 @@ export default function StickyNavbar() {
               height={40}
               className="w-24 sm:w-[105px]"
             />
-          </div>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -95,6 +96,19 @@ export default function StickyNavbar() {
       >
         <div className="flex flex-col items-center justify-center h-full px-6">
           <div className="flex flex-col items-center space-y-8 text-center">
+            <Link 
+              href="/"
+              className="mb-6"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Image 
+                src="/logo.png"
+                alt="Bevlytics Logo"
+                width={105}
+                height={40}
+                className="w-24 sm:w-[105px]"
+              />
+            </Link>
             <a 
               href="#solutions" 
               className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" 
