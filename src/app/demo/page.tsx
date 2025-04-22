@@ -31,9 +31,12 @@ export default function DemoPage() {
     // Reset status and start loading
     setIsSubmitting(true);
     setSubmitStatus({});
+    
+    console.log('Form being submitted:', form);
 
     try {
       // Send data to the API endpoint
+      console.log('Sending request to /api/send-email');
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -43,6 +46,7 @@ export default function DemoPage() {
       });
 
       const data = await response.json();
+      console.log('Response received:', data);
 
       if (response.ok) {
         // Success - clear form and show success message
@@ -55,7 +59,7 @@ export default function DemoPage() {
         });
         setSubmitStatus({ 
           success: true, 
-          message: 'Thank you! We\'ve received your request and will contact you soon.' 
+          message: 'Thank you! Your demo request has been submitted and an email has been sent to pkhanal012@gmail.com with your information.' 
         });
       } else {
         // API returned an error
