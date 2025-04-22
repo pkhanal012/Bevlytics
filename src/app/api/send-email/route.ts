@@ -3,8 +3,18 @@ import nodemailer from 'nodemailer';
 import fs from 'fs';
 import path from 'path';
 
+// Define interface for form data
+interface FormData {
+  email: string;
+  firstName: string;
+  lastName: string;
+  companySize: string;
+  hearAbout: string;
+  [key: string]: string; // Allow for additional properties
+}
+
 // Function to save form data to a JSON file
-async function saveFormSubmission(formData: any) {
+async function saveFormSubmission(formData: FormData) {
   try {
     // Path to submissions file
     const dataDir = path.join(process.cwd(), 'data');
@@ -23,7 +33,7 @@ async function saveFormSubmission(formData: any) {
     };
     
     // Read existing submissions
-    let submissions = [];
+    let submissions: Array<typeof submission> = [];
     if (fs.existsSync(filePath)) {
       const fileContent = fs.readFileSync(filePath, 'utf8');
       submissions = JSON.parse(fileContent);

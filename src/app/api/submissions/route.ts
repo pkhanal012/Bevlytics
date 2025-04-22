@@ -2,6 +2,18 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+// Define interface for submission items
+interface Submission {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  companySize: string;
+  hearAbout: string;
+  timestamp: string;
+  [key: string]: string; // Allow for additional properties
+}
+
 export async function GET() {
   try {
     // Path to submissions file
@@ -16,10 +28,10 @@ export async function GET() {
     
     // Read and parse submissions file
     const fileContent = fs.readFileSync(filePath, 'utf8');
-    const submissions = JSON.parse(fileContent);
+    const submissions: Submission[] = JSON.parse(fileContent);
     
     // Sort submissions by timestamp (newest first)
-    const sortedSubmissions = submissions.sort((a: any, b: any) => {
+    const sortedSubmissions = submissions.sort((a: Submission, b: Submission) => {
       return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
     });
     
