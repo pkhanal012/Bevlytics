@@ -20,19 +20,22 @@ export default function CallToAction() {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+    
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
 
   return (
     <section 
+      id="contact"
       ref={sectionRef}
       className="relative py-12 sm:py-16 lg:py-32 overflow-hidden" 
       style={{ backgroundColor: '#FF5733' }}

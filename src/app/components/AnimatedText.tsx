@@ -14,6 +14,7 @@ interface AnimatedTextProps {
 
 const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -34,7 +35,7 @@ const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
     const isMobile = window.innerWidth < 640;
 
     // Create the main timeline for color animation
-    const colorTimeline = gsap.timeline({
+    timelineRef.current = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: 'center center',
@@ -71,6 +72,9 @@ const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
     window.addEventListener('resize', handleResize);
 
     return () => {
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+      }
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       window.removeEventListener('resize', handleResize);
     };

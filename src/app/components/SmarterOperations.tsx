@@ -89,13 +89,15 @@ export default function SmarterOperations() {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+    
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -151,6 +153,7 @@ export default function SmarterOperations() {
   return (
     <section 
       ref={sectionRef}
+      id="features"
       className="py-12 sm:py-16 lg:py-24 overflow-hidden" 
       style={{ backgroundColor: '#EFEDE8' }}
     >
