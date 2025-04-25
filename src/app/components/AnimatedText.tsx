@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,17 +72,42 @@ const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      colorTimeline.kill();
       window.removeEventListener('resize', handleResize);
     };
   }, [text]);
 
   return (
-    <div 
-      ref={containerRef}
-      className={`${className} overflow-hidden w-full text-center px-4 sm:px-6 lg:px-8`}
-      aria-label={text}
-    />
+    <div className="relative">
+      {/* Logo SVG - Left side */}
+      <div className="absolute -left-16 sm:-left-28 md:-left-36 top-12 float-animation z-10">
+        <Image 
+          src="/singlelogo.svg" 
+          alt="Bevlytics Logo" 
+          width={80} 
+          height={80}
+          className="w-16 h-16 sm:w-20 sm:h-20"
+          priority
+        />
+      </div>
+      
+      {/* Excel SVG - Right side */}
+      <div className="absolute -right-16 sm:-right-28 md:-right-36 bottom-12 float-animation z-10" style={{ animationDelay: '2s' }}>
+        <Image 
+          src="/excel.svg" 
+          alt="Excel Icon" 
+          width={80} 
+          height={80}
+          className="w-16 h-16 sm:w-20 sm:h-20"
+          priority
+        />
+      </div>
+    
+      <div 
+        ref={containerRef}
+        className={`${className} overflow-hidden w-full text-center px-4 sm:px-6 lg:px-8`}
+        aria-label={text}
+      />
+    </div>
   );
 };
 
