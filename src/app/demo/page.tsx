@@ -59,7 +59,7 @@ export default function DemoPage() {
         });
         setSubmitStatus({ 
           success: true, 
-          message: 'Thank you! Your demo request has been submitted and an email has been sent to pkhanal012@gmail.com with your information.' 
+          message: 'Your demo request has been successfully submitted! Our team will contact you shortly to schedule your personalized demonstration of Bevlytics. Please check your email for confirmation.' 
         });
       } else {
         // API returned an error
@@ -103,20 +103,31 @@ export default function DemoPage() {
               {/* Right side - Form */}
               <div className="bg-[#1A1A1A]/90 backdrop-blur-sm p-8 rounded-xl">
                 {submitStatus.success ? (
-                  <div className="text-center py-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-6">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <div className="text-center py-8 px-4">
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 mb-8 animate-pulse">
+                      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" 
                           stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-medium text-white mb-3">Request Submitted!</h3>
-                    <p className="text-gray-300 mb-8">{submitStatus.message}</p>
+                    <h3 className="text-3xl font-bold text-white mb-4">Thank You!</h3>
+                    <div className="bg-gradient-to-r from-green-500/20 to-green-600/20 p-6 rounded-lg mb-6 backdrop-blur-sm">
+                      <p className="text-gray-200 mb-4 leading-relaxed">{submitStatus.message}</p>
+                      <p className="text-gray-300 text-sm">
+                        <span className="inline-block mr-2">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" 
+                              stroke="#E75010" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </span>
+                        You&apos;ll receive a confirmation email shortly
+                      </p>
+                    </div>
                     <button
                       onClick={() => setSubmitStatus({})}
-                      className="bg-[#E75010] hover:bg-[#D04000] text-white py-2 px-6 rounded-md font-medium transition-colors"
+                      className="bg-[#E75010] hover:bg-[#D04000] text-white py-3 px-8 rounded-md font-medium transition-colors text-lg"
                     >
-                      Submit Another Request
+                      Request Another Demo
                     </button>
                   </div>
                 ) : (

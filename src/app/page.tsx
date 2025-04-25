@@ -6,6 +6,7 @@ import SmarterOperations from './components/SmarterOperations'
 import CallToAction from './components/CallToAction'
 import Footer from './components/Footer'
 import ClientWrapper from './components/ClientWrapper'
+import UseCaseSection from './components/UseCaseSection'
 import './styles/animations.css'
 
 export default function Home() {
@@ -22,12 +23,10 @@ export default function Home() {
               <div className="max-w-3xl sm:mx-0 md:mx-auto lg:mx-8">
                 
                 <h1 className="text-3xl sm:text-3xl lg:text-5xl font-medium mb-3 sm:mb-4 text-white">
-                  Revolutionize Your Data Strategy with AI-Powered Insights
+                AI-Powered Market <br /> Intelligence for Breweries
                 </h1>
                 <p className="text-lg sm:text-sm lg:text-xl text-opacity-50 text-gray-400 mb-6 sm:mb-8">
-                  Real-time analytics, automated reports, and intelligent recommendations
-                  <br className="hidden sm:block" />
-                  — all in one seamless SaaS platform.
+                Bevlytics.ai transforms raw distributor data into real-time <br />performance dashboards, SKU analysis, and category insights <br /> — built to grow your beverage business.
                 </p>
                 <div className="flex flex-col  sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                   <a href="/demo" className="w-full sm:w-auto text-center bg-white text-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-gray-200 transition-colors text-base sm:text-base">
@@ -166,6 +165,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Use Case Section */}
+        <UseCaseSection />
 
         {/* Smarter Operations Section */}
         <SmarterOperations />
