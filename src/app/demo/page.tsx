@@ -93,10 +93,10 @@ export default function DemoPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Left side - Content */}
               <div>
-                <div className="text-[#E75010] uppercase font-medium tracking-wider mb-4">FREE DEMO</div>
+                <div className="text-[#D52383] uppercase font-medium tracking-wider mb-4">FREE DEMO</div>
                 <h1 className="text-4xl md:text-5xl font-medium text-white mb-6">Get a Bevlytics Demo</h1>
                 <p className="text-lg text-gray-300 mb-8">
-                  Get a free 1:1 demo with our team to understand how you can leverage data to insights (D2I) to level up your team and operations.
+                  Get a free 1:1 demo with our team to understand how you can leverage data to insights to level up your team and operations.
                 </p>
               </div>
 
@@ -222,7 +222,7 @@ export default function DemoPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full ${isSubmitting ? 'bg-gray-500' : 'bg-[#E75010] hover:bg-[#D04000]'} text-white py-3 px-6 rounded-md font-medium transition-colors flex justify-center items-center`}
+                      className={`w-full ${isSubmitting ? 'bg-gray-500' : 'bg-[#D52383] hover:bg-[#A51362]'} text-white py-3 px-6 rounded-md font-medium transition-colors flex justify-center items-center`}
                     >
                       {isSubmitting ? (
                         <>

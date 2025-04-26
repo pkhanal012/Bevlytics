@@ -17,15 +17,15 @@ function FeatureCard({ icon, title, description, index, isVisible }: FeatureCard
   
   return (
     <div 
-      className={`bg-white rounded-lg sm:rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8 
+      className={`bg-white rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-6 lg:p-8 
                 hover:shadow-lg transition-all duration-500 flex flex-col h-full transform 
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       style={{ transitionDelay: isVisible ? animationDelay : '0ms' }}
     >
-      <div className="flex items-start justify-left mb-4 sm:mb-6 lg:mb-12 relative">
+      <div className="flex items-start justify-left mb-3 sm:mb-6 lg:mb-12 relative">
         <div className="relative transform hover:scale-110 transition-transform duration-300">
           <div 
-            className={`absolute inset-0 bg-orange-100 rounded-full scale-0 
+            className={`absolute inset-0 bg-pink-100 rounded-full scale-0 
                       ${isVisible ? 'animate-ping opacity-25' : 'opacity-0'}`}
             style={{ animationDelay: animationDelay, animationDuration: '1s' }}
           ></div>
@@ -34,19 +34,20 @@ function FeatureCard({ icon, title, description, index, isVisible }: FeatureCard
             alt={title}
             width={48}
             height={48}
-            className={`relative z-10 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12
+            className={`relative z-10 w-6 h-6 sm:w-10 sm:h-10 lg:w-12 lg:h-12
                       ${isVisible ? 'animate-bounce' : ''}`}
             style={{ 
               animationDelay: animationDelay, 
               animationDuration: '2s',
-              animationIterationCount: 1
+              animationIterationCount: 1,
+              filter: 'invert(26%) sepia(95%) saturate(2857%) hue-rotate(309deg) brightness(88%) contrast(85%)'
             }}
           />
         </div>
       </div>
-      <div className="space-y-2 sm:space-y-3 lg:space-y-4">
+      <div className="space-y-1 sm:space-y-3 lg:space-y-4">
         <h3 
-          className={`text-lg sm:text-xl lg:text-2xl text-black font-semibold transform
+          className={`text-base sm:text-xl lg:text-2xl text-black font-semibold transform
                     ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
           style={{ 
             transitionDelay: isVisible ? `${parseInt(animationDelay) + 200}ms` : '0ms',
@@ -56,7 +57,7 @@ function FeatureCard({ icon, title, description, index, isVisible }: FeatureCard
           {title}
         </h3>
         <p 
-          className={`text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed transform
+          className={`text-xs sm:text-base lg:text-lg text-gray-600 leading-relaxed transform
                     ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
           style={{ 
             transitionDelay: isVisible ? `${parseInt(animationDelay) + 400}ms` : '0ms',
@@ -154,35 +155,35 @@ export default function SmarterOperations() {
     <section 
       ref={sectionRef}
       id="features"
-      className="py-12 sm:py-16 lg:py-24 overflow-hidden" 
+      className="py-8 sm:py-16 lg:py-24 overflow-hidden" 
       style={{ backgroundColor: '#EFEDE8' }}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-3 sm:px-6 lg:px-8">
         <div 
-          className={`text-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-700 transform
+          className={`text-center mb-6 sm:mb-12 lg:mb-16 transition-all duration-700 transform
                     ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
         >
           <span 
-            className={`inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium mb-3
+            className={`inline-block px-2 sm:px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs sm:text-sm font-medium mb-2 sm:mb-3
                       ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
             style={{ transition: 'all 0.6s ease-out', transitionDelay: isVisible ? '200ms' : '0ms' }}
           >
             Data-Driven Operations
           </span>
           <h2 
-            className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black mb-2 sm:mb-3 lg:mb-4"
+            className="text-xl sm:text-3xl lg:text-4xl font-medium text-black mb-2 sm:mb-3 lg:mb-4"
           >
             Smarter Operations, Powered by AI
           </h2>
           <p 
-            className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-sm sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-1"
             style={{ transition: 'all 0.6s ease-out', transitionDelay: isVisible ? '400ms' : '0ms' }}
           >
             Track, forecast, optimize, and report — all in one automated platform.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}

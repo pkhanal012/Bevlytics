@@ -78,7 +78,7 @@ export default function TailoredSolutions() {
                     alt={feature.title}
                     width={48}
                     height={48}
-                    className="text-[#FF4405]"
+                    className="text-[#D52383]"
                   />
                 </div>
               </div>

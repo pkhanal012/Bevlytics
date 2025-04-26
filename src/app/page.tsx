@@ -12,25 +12,6 @@ import UseCaseSection from './components/UseCaseSection'
 import './styles/animations.css'
 
 export default function Home() {
-  // Add smooth scroll function
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    
-    const targetElement = document.getElementById(targetId);
-    
-    if (targetElement) {
-      // Calculate offset to account for sticky header
-      const navbarHeight = document.querySelector('nav')?.offsetHeight || 0;
-      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-      
-      // Smooth scroll to target
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-  
   return (
     <ClientWrapper>
       <main className="min-h-screen bg-black">
@@ -39,26 +20,46 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative h-screen w-full overflow-hidden">
           <VideoBackground />
-          <div className="absolute inset-0 flex py-24 sm:py-32 lg:py-48">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl sm:mx-0 md:mx-auto lg:mx-8">
-                
-                <h1 className="text-3xl sm:text-3xl lg:text-5xl font-medium mb-3 sm:mb-4 text-white">
-                AI-Powered Market <br /> Intelligence for Breweries
+          <div className="absolute inset-0 flex py-24 sm:py-32 lg:py-58">
+            <div className="container flex justify-center mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl  sm:mx-0 md:mx-auto lg:mx-8">
+              <div className="flex flex-col items-center justify-center sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                  <a 
+                    href="https://www.paradymdata.com/" 
+                    className="w-full sm:w-auto text-center border border-[#3A3939] px-2 sm:px-4 py-2 sm:py-2 rounded-full text-white text-sm sm:text-sm mb-4 relative overflow-hidden"
+                  >
+                    <span className="relative z-10">a division of parad<span className='text-[#D52383]'>Y</span>mdata.com</span>
+                    <div className="absolute inset-0 shine-effect"></div>
+                  </a>
+                </div>
+                <h1 className="text-center text-3xl leading-14 sm:text-3xl lg:text-5xl font-medium mb-3 sm:mb-4 text-white">
+                Revolutionize Your Brewery <br /> with  Data-Driven Decisions.
                 </h1>
-                <p className="text-lg sm:text-sm lg:text-xl text-opacity-50 text-gray-400 mb-6 sm:mb-8">
-                Bevlytics.ai transforms raw distributor data into real-time <br />performance dashboards, SKU analysis, and category insights <br /> — built to grow your beverage business.
+                <p className="text-center text-lg sm:text-sm lg:text-xl text-opacity-50 text-gray-400 mb-6 sm:mb-8">
+                Bevlytics.ai transforms raw distributor data into real-time performance dashboards, SKU analysis, and category insights  — built to grow your beverage business.
                 </p>
-                <div className="flex flex-col  sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                  <a href="/demo" className="w-full sm:w-auto text-center bg-white text-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-gray-200 transition-colors text-base sm:text-base">
-                    Get a free demo
+                <div className="flex flex-col items-center justify-center sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                  <a 
+                    href="/demo" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = "/demo";
+                    }}
+                    className="w-full sm:w-auto text-center bg-white text-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-gray-200 transition-colors text-base sm:text-base relative overflow-hidden"
+                  >
+                    <span className="relative z-10">Get a free demo</span>
+                    <div className="absolute inset-0 shine-effect"></div>
                   </a>
                   <a 
-                    href="#contact" 
-                    className="w-full sm:w-auto text-center border border-white border-opacity-10 px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-white hover:text-black transition-colors text-white text-base sm:text-base"
-                    onClick={(e) => handleSmoothScroll(e, 'contact')}
+                    href="/demo" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = "/demo";
+                    }}
+                    className="w-full sm:w-auto text-center border border-[#686767] px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-white hover:text-black transition-colors text-white text-base sm:text-base relative overflow-hidden"
                   >
-                    Contact us
+                    <span className="relative z-10">Contact us</span>
+                   
                   </a>
                 </div>
               </div>
@@ -70,7 +71,7 @@ export default function Home() {
         <section className="bg-black min-h-screen relative py-12 sm:py-16 lg:py-24">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#E75010] text-white text-xs sm:text-sm mb-6 sm:mb-8 lg:mb-12">
+              <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#D52383] text-white text-xs sm:text-sm mb-6 sm:mb-8 lg:mb-12">
                 Your End-to-End Control Tower for Operational Clarity
               </div>
               <div className="flex justify-center">
@@ -90,7 +91,7 @@ export default function Home() {
               {/* Left Column - Sticky */}
               <div className="lg:col-span-5 lg:sticky lg:top-24 h-fit mb-6 sm:mb-8 lg:mb-32">
                 <h2 className="text-2xl sm:text-2xl lg:text-4xl font-medium text-white mb-3 sm:mb-4">
-                  Tailored Solutions for Key Challenges
+                Built for Breweries. Trusted by Analysts
                 </h2>
                 <p className="text-base sm:text-base lg:text-xl text-gray-400">
                   Whether you manage stock, track sales, or coordinate with distributors — your data should work for you.
@@ -111,13 +112,13 @@ export default function Home() {
                         className="object-contain float-animation w-full sm:w-[200px] lg:w-[250px]"
                       />
                     </div>
-                    <span className="text-[#E75010] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-4">AI-DRIVEN ANALYTICS</span>
+                    
                   </div>
                   <h3 className="text-xl sm:text-xl lg:text-2xl font-medium text-white mb-2">
-                    Let Your Data Think for You
+                  Real-Time Dashboards
                   </h3>
                   <p className="text-base sm:text-base lg:text-xl text-[#9CA3AF] leading-relaxed">
-                    Predict what&apos;s next — from stock needs to demand spikes — with powerful AI forecasting and sales modeling.
+                  Monitor trends across styles, SKUs, and segments instantly.
                   </p>
                 </div>
 
@@ -133,13 +134,13 @@ export default function Home() {
                         className="object-contain float-animation w-full sm:w-[200px] lg:w-[250px]"
                       />
                     </div>
-                    <span className="text-[#E75010] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-4">DATA TRANSFORMATION</span>
+                
                   </div>
                   <h3 className="text-xl sm:text-xl lg:text-2xl font-medium text-white mb-2">
-                    From Spreadsheet Chaos to Clean, Connected Data — Instantly
+                  SKU & Size Analysis
                   </h3>
                   <p className="text-base sm:text-base lg:text-xl text-[#9CA3AF] leading-relaxed">
-                    Upload messy files and let AI handle ingestion, structure, and cleanup in real-time.
+                  See what sizes move best - by region, brand, or distributor.
                   </p>
                 </div>
 
@@ -155,13 +156,14 @@ export default function Home() {
                         className="object-contain float-animation w-full sm:w-[200px] lg:w-[250px]"
                       />
                     </div>
-                    <span className="text-[#E75010] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-4">INTERACTIVE DASHBOARDS</span>
+              
                   </div>
                   <h3 className="text-xl sm:text-xl lg:text-2xl font-medium text-white mb-2"> 
-                    See Everything. Understand Anything. Act Instantly.
+                  New Product Analysis
                   </h3>
                   <p className="text-base sm:text-base lg:text-xl text-[#9CA3AF] leading-relaxed">
-                    Dynamic, real-time dashboards built for clarity, speed, and smarter decisions.
+                  Track launch success with early sales and market response.
+
                   </p>    
                 </div>
 
@@ -177,14 +179,38 @@ export default function Home() {
                         className="object-contain float-animation w-full sm:w-[200px] lg:w-[250px]"
                       />
                     </div>
-                    <span className="text-[#E75010] text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-4">CLOUD-NATIVE & BUILT TO SCALE</span>
+                    
                   </div>
                   <h3 className="text-xl sm:text-xl lg:text-2xl font-medium text-white mb-2">
-                    Fast, Secure, and Ready to Grow With You
+                  AI Forecasting
                   </h3>
                   <p className="text-base sm:text-base lg:text-xl text-[#9CA3AF] leading-relaxed">
-                    A modern, cloud-first platform designed for speed, reliability, and scale — wherever you are.
+                  A modern, cloud-first platform designed for speed, reliability, and scale — wherever you are.
                   </p>
+                </div>
+
+
+                {/* Card 5 */}
+                <div className="bg-[#0F0E0E] border border-[#262626]  rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-12">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-6 sm:mb-8 lg:mb-12">
+                    <div className="w-full sm:w-auto sm:flex-shrink-0">
+                      <Image 
+                        src="/block5.png" 
+                        alt="Dashboard Illustration"
+                        width={250}
+                        height={250}
+                        className="object-contain float-animation w-full sm:w-[200px] lg:w-[250px]"
+                      />
+                    </div>
+              
+                  </div>
+                  <h3 className="text-xl sm:text-xl lg:text-2xl font-medium text-white mb-2"> 
+                  Data Upload Engine
+                  </h3>
+                  <p className="text-base sm:text-base lg:text-xl text-[#9CA3AF] leading-relaxed">
+                  Upload messy Excel files - Bevlytics AI Engine does the cleanup.
+
+                  </p>    
                 </div>
               </div>
             </div>

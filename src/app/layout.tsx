@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { IBM_Plex_Sans } from 'next/font/google'
 import './globals.css'
 
@@ -11,6 +11,14 @@ const ibmPlexSans = IBM_Plex_Sans({
 export const metadata: Metadata = {
   title: 'Bevlytics - AI-Powered Analytics Platform',
   description: 'Real-time analytics, automated reports, and intelligent recommendations — all in one seamless SaaS platform.',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: '#0a0a0a'
 }
 
 export default function RootLayout({

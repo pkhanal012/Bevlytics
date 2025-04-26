@@ -7,12 +7,12 @@
 </g>
 <defs>
 <linearGradient id="paint0_linear_646_826" x1="10.1206" y1="0" x2="10.1206" y2="20.2413" gradientUnits="userSpaceOnUse">
-<stop stop-color="#EA7235"/>
-<stop offset="1" stop-color="#F34C10"/>
+<stop stop-color="#D52383"/>
+<stop offset="1" stop-color="#C71C76"/>
 </linearGradient>
 <linearGradient id="paint1_linear_646_826" x1="2.07045" y1="0.992959" x2="17.7029" y2="20.2974" gradientUnits="userSpaceOnUse">
-<stop stop-color="#ED844F"/>
-<stop offset="1" stop-color="#E84E14"/>
+<stop stop-color="#DF4E9D"/>
+<stop offset="1" stop-color="#C71C76"/>
 </linearGradient>
 <clipPath id="clip0_646_826">
 <rect width="10.824" height="12.628" fill="white" transform="translate(4.63135 3.84143)"/>
