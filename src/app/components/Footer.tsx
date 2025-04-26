@@ -43,7 +43,7 @@ export default function Footer() {
             <ul className="space-y-3 sm:space-y-4">
               <li><a href="/features" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Features</a></li>
               <li><a href="/solutions" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Solutions</a></li>
-              <li><a href="/pricing" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+
               <li><a href="/demo" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Request Demo</a></li>
             </ul>
           </nav>
@@ -58,15 +58,6 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <nav className="sm:col-span-1 lg:col-span-2" aria-label="Resources">
-            <h3 className="text-white font-semibold mb-4 sm:mb-6">Resources</h3>
-            <ul className="space-y-3 sm:space-y-4">
-              <li><a href="/docs" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="/help" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Help Center</a></li>
-              <li><a href="/guides" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Guides</a></li>
-              <li><a href="/api" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">API Reference</a></li>
-            </ul>
-          </nav>
         </div>
 
         {/* Bottom Bar */}

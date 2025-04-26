@@ -41,6 +41,30 @@ export default function StickyNavbar() {
     };
   }, [isMobileMenuOpen]);
 
+  // Handle smooth scrolling
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    
+    // Close mobile menu if open
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+    
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // Calculate offset to account for sticky header
+      const navbarHeight = document.querySelector('nav')?.offsetHeight || 0;
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+      
+      // Smooth scroll to target
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <>
       <nav 
@@ -77,11 +101,41 @@ export default function StickyNavbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#solutions" className="hover:text-gray-300 transition-colors">Solutions</a>
-            <a href="#features" className="hover:text-gray-300 transition-colors">Features</a>
-            <a href="#use-cases" className="hover:text-gray-300 transition-colors">Use Cases</a>
-            <a href="#about" className="hover:text-gray-300 transition-colors">About</a>
-            <a href="#contact" className="hover:text-gray-300 transition-colors">Contact</a>
+            <a 
+              href="#solutions" 
+              className="hover:text-gray-300 transition-colors"
+              onClick={(e) => handleNavLinkClick(e, 'solutions')}
+            >
+              Solutions
+            </a>
+            <a 
+              href="#use-cases" 
+              className="hover:text-gray-300 transition-colors"
+              onClick={(e) => handleNavLinkClick(e, 'use-cases')}
+            >
+              Use Cases
+            </a>
+            <a 
+              href="#features" 
+              className="hover:text-gray-300 transition-colors"
+              onClick={(e) => handleNavLinkClick(e, 'features')}
+            >
+              Features
+            </a>
+            <a 
+              href="#about" 
+              className="hover:text-gray-300 transition-colors"
+              onClick={(e) => handleNavLinkClick(e, 'about')}
+            >
+              About
+            </a>
+            <a 
+              href="#contact" 
+              className="hover:text-gray-300 transition-colors"
+              onClick={(e) => handleNavLinkClick(e, 'contact')}
+            >
+              Contact
+            </a>
             <ShakingButton />
           </div>
         </div>
@@ -112,35 +166,35 @@ export default function StickyNavbar() {
             <a 
               href="#solutions" 
               className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" 
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleNavLinkClick(e, 'solutions')}
             >
               Solutions
             </a>
             <a 
               href="#features" 
               className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" 
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleNavLinkClick(e, 'features')}
             >
               Features
             </a>
             <a 
               href="#use-cases" 
               className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" 
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleNavLinkClick(e, 'use-cases')}
             >
               Use Cases
             </a>
             <a 
               href="#about" 
               className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" 
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleNavLinkClick(e, 'about')}
             >
               About
             </a>
             <a 
               href="#contact" 
               className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" 
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => handleNavLinkClick(e, 'contact')}
             >
               Contact
             </a>

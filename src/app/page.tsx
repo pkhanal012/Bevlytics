@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image'
 import VideoBackground from './components/VideoBackground'
 import AnimatedText from './components/AnimatedText'
@@ -10,6 +12,25 @@ import UseCaseSection from './components/UseCaseSection'
 import './styles/animations.css'
 
 export default function Home() {
+  // Add smooth scroll function
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // Calculate offset to account for sticky header
+      const navbarHeight = document.querySelector('nav')?.offsetHeight || 0;
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+      
+      // Smooth scroll to target
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+  
   return (
     <ClientWrapper>
       <main className="min-h-screen bg-black">
@@ -32,7 +53,11 @@ export default function Home() {
                   <a href="/demo" className="w-full sm:w-auto text-center bg-white text-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-gray-200 transition-colors text-base sm:text-base">
                     Get a free demo
                   </a>
-                  <a href="#contact" className="w-full sm:w-auto text-center border border-white border-opacity-10 px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-white hover:text-black transition-colors text-white text-base sm:text-base">
+                  <a 
+                    href="#contact" 
+                    className="w-full sm:w-auto text-center border border-white border-opacity-10 px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-white hover:text-black transition-colors text-white text-base sm:text-base"
+                    onClick={(e) => handleSmoothScroll(e, 'contact')}
+                  >
                     Contact us
                   </a>
                 </div>
@@ -50,8 +75,8 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                 <AnimatedText 
-                  text="Ditch the manual reports and data chaos. Our AI-driven platform turns disconnected distributor data into a clear, real-time view of what&apos;s happening — and what to do next."
-                  className="max-w-4xl leading-tight text-2xl sm:text-2xl lg:text-5xl font-medium px-4"
+                  text="Say goodbye to manual reports, static spreadsheets, and disconnected sales data. Bevlytics unifies your performance metrics into one powerful, brewery-focused platform. Get clarity across SKUs, segments, and distributors — in real time."
+                  className="max-w-4xl leading-tight text-2xl sm:text-2xl lg:text-4xl font-medium px-4"
                 />
               </div>
             </div>
@@ -59,7 +84,7 @@ export default function Home() {
         </section>
 
         {/* Tailored Solutions Section */}
-        <section className="bg-black pt-12 sm:pt-16 lg:pt-32">
+        <section id="solutions" className="bg-black pt-12 sm:pt-16 lg:pt-32">
           <div className="container mx-auto px-4 sm:px-6 lg:px-16">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
               {/* Left Column - Sticky */}
@@ -172,6 +197,7 @@ export default function Home() {
         {/* Smarter Operations Section */}
         <SmarterOperations />
 
+     
         {/* Call to Action Section */}
         <CallToAction />
 
