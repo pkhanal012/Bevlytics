@@ -59,17 +59,17 @@ export default function CallToAction() {
               ${isVisible ? 'reveal-animation' : 'opacity-0'}
             `}
           >
-            Ready to automate more?
+            Ready to Drive Growth with Semantic AI?
           </span>
           
           <h2 
             className={`
-              text-2xl sm:text-3xl lg:text-5xl font-medium text-white mb-4 sm:mb-8 lg:mb-12 
+              text-xl sm:text-xl lg:text-3xl font-medium text-white mb-4 sm:mb-8 lg:mb-12 
               max-w-4xl mx-auto leading-tight px-2 sm:px-4
               ${isVisible ? 'reveal-animation reveal-delay-300' : 'opacity-0'}
             `}
           >
-            Transform your operations with AI-powered analytics and real-time insights
+            Discover how Bevlytics.ai’s semantic-driven analytics transform your brewery’s data into actionable insights. Automate scorecards, optimize your product strategy, and boost your market performance—all powered by advanced Semantic AI.
           </h2>
 
           <a 

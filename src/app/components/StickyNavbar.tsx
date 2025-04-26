@@ -4,12 +4,15 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ShakingButton from './ShakingButton';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function StickyNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +53,15 @@ export default function StickyNavbar() {
       setIsMobileMenuOpen(false);
     }
     
+    // Check if we're on the homepage
+    const isHomePage = pathname === '/';
+    
+    if (!isHomePage) {
+      // If we're not on the homepage, navigate to the homepage with the targetId as hash
+      router.push(`/#${targetId}`);
+      return;
+    }
+    
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
@@ -76,7 +88,10 @@ export default function StickyNavbar() {
         `}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-16 py-4 sm:py-6 flex justify-between items-center text-white">
-          <Link href="/" className="flex items-center cursor-pointer">
+          <div 
+            onClick={() => router.push('/')} 
+            className="flex items-center cursor-pointer"
+          >
             <Image 
               src="/logo.png"
               alt="Bevlytics Logo"
@@ -84,7 +99,7 @@ export default function StickyNavbar() {
               height={40}
               className="w-24 sm:w-[105px]"
             />
-          </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -122,13 +137,6 @@ export default function StickyNavbar() {
             >
               Features
             </a>
-            <a 
-              href="#about" 
-              className="hover:text-gray-300 transition-colors"
-              onClick={(e) => handleNavLinkClick(e, 'about')}
-            >
-              About
-            </a>
             <Link 
               href="/contact" 
               className="hover:text-gray-300 transition-colors"
@@ -149,10 +157,12 @@ export default function StickyNavbar() {
       >
         <div className="flex flex-col items-center justify-center h-full px-6">
           <div className="flex flex-col items-center space-y-8 text-center">
-            <Link 
-              href="/"
-              className="mb-6"
-              onClick={() => setIsMobileMenuOpen(false)}
+            <div 
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                router.push('/');
+              }}
+              className="mb-6 cursor-pointer"
             >
               <Image 
                 src="/logo.png"
@@ -161,7 +171,7 @@ export default function StickyNavbar() {
                 height={40}
                 className="w-24 sm:w-[105px]"
               />
-            </Link>
+            </div>
             <a 
               href="#solutions" 
               className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" 
@@ -182,13 +192,6 @@ export default function StickyNavbar() {
               onClick={(e) => handleNavLinkClick(e, 'use-cases')}
             >
               Use Cases
-            </a>
-            <a 
-              href="#about" 
-              className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" 
-              onClick={(e) => handleNavLinkClick(e, 'about')}
-            >
-              About
             </a>
             <Link 
               href="/contact" 

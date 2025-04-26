@@ -171,7 +171,7 @@ export default function DemoPage() {
                     </div>
 
                     <div className="mb-8">
-                      <label htmlFor="hearAbout" className="block text-white mb-2">How did you first hear about Data to insights (D2I&apos;s)</label>
+                      <label htmlFor="hearAbout" className="block text-white mb-2">How did you first hear about Bevlytics.ai?</label>
                       <select
                         id="hearAbout"
                         name="hearAbout"
@@ -179,10 +179,10 @@ export default function DemoPage() {
                         required
                       >
                         <option value="" disabled selected>Please select an option</option>
+                        <option value="event">Event or Conference</option>
+                        <option value="friend">Friend or Colleague</option>
                         <option value="social">Social Media</option>
                         <option value="search">Search Engine</option>
-                        <option value="friend">Friend or Colleague</option>
-                        <option value="event">Event or Conference</option>
                         <option value="other">Other</option>
                       </select>
                     </div>

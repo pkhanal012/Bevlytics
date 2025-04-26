@@ -21,9 +21,9 @@ export default function Home() {
         <section className="relative h-screen w-full overflow-hidden">
           <VideoBackground />
           <div className="absolute inset-0 flex py-24 sm:py-32 lg:py-58">
-            <div className="container flex justify-center mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl  sm:mx-0 md:mx-auto lg:mx-8">
-              <div className="flex flex-col items-center justify-center sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+            <div className="container flex  mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-3xl  sm:mx-0 md:mx-auto lg:mx-0">
+              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                   <a 
                     href="https://www.paradymdata.com/" 
                     className="w-full sm:w-auto text-center border border-[#3A3939] px-2 sm:px-4 py-2 sm:py-2 rounded-full text-white text-sm sm:text-sm mb-4 relative overflow-hidden"
@@ -32,13 +32,13 @@ export default function Home() {
                     <div className="absolute inset-0 shine-effect"></div>
                   </a>
                 </div>
-                <h1 className="text-center text-3xl leading-14 sm:text-3xl lg:text-5xl font-medium mb-3 sm:mb-4 text-white">
-                Revolutionize Your Brewery <br /> with  Data-Driven Decisions.
+                <h1 className="text-left text-3xl leading-13 sm:text-3xl lg:text-5xl font-medium mb-3 sm:mb-4 text-white">
+                Powered by Semantic AI: <br />Next-Level Insights for <br />  Brewery Analytics
                 </h1>
-                <p className="text-center text-lg sm:text-sm lg:text-xl text-opacity-50 text-gray-400 mb-6 sm:mb-8">
-                Bevlytics.ai transforms raw distributor data into real-time performance dashboards, SKU analysis, and category insights  — built to grow your beverage business.
+                <p className="text-left text-lg sm:text-sm lg:text-base text-opacity-50 text-gray-400 mb-6 sm:mb-8">
+                Bevlytics.ai leverages Semantic AI—an advanced technology combining machine learning (ML), <br /> natural language processing (NLP), and knowledge graphs—to transform raw distributor and <br /> point-of-sale (POS) data into meaningful insights that drive growth and strategic execution.
                 </p>
-                <div className="flex flex-col items-center justify-center sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                <div className="flex flex-col  sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                   <a 
                     href="/demo" 
                     onClick={(e) => {
@@ -72,11 +72,11 @@ export default function Home() {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#D52383] text-white text-xs sm:text-sm mb-6 sm:mb-8 lg:mb-12">
-                Your End-to-End Control Tower for Operational Clarity
+              Unlock the Power of Semantic AI
               </div>
               <div className="flex justify-center">
                 <AnimatedText 
-                  text="Say goodbye to manual reports, static spreadsheets, and disconnected sales data. Bevlytics unifies your performance metrics into one powerful, brewery-focused platform. Get clarity across SKUs, segments, and distributors — in real time."
+                  text="Unlike traditional analytics tools that rely solely on pattern recognition, Bevlytics.ai’s Semantic AI understands the meaning, context, and intent behind your brewery’s data. It connects dots across retailers, SKUs, regions, and timeframes, transforming fragmented data into a clear, actionable picture of your business."
                   className="max-w-4xl leading-tight text-2xl sm:text-2xl lg:text-4xl font-medium px-4"
                 />
               </div>
