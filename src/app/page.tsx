@@ -51,10 +51,10 @@ export default function Home() {
                     <div className="absolute inset-0 shine-effect"></div>
                   </a>
                   <a 
-                    href="/demo" 
+                    href="/contact" 
                     onClick={(e) => {
                       e.preventDefault();
-                      window.location.href = "/demo";
+                      window.location.href = "/contact";
                     }}
                     className="w-full sm:w-auto text-center border border-[#686767] px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-white hover:text-black transition-colors text-white text-base sm:text-base relative overflow-hidden"
                   >

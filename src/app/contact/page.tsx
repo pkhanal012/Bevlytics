@@ -5,9 +5,9 @@ import StickyNavbar from '../components/StickyNavbar';
 import Footer from '../components/Footer';
 import ClientWrapper from '../components/ClientWrapper';
 import VideoBackground from '../components/VideoBackground';
-import DemoSection from '../components/DemoSection';
+import ContactSection from '../components/ContactSection';
 
-export default function DemoPage() {
+export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     success?: boolean;
@@ -27,6 +27,8 @@ export default function DemoPage() {
       
       // Add a timeout to show an error if the form doesn't redirect
       setTimeout(() => {
+        // If we're still on the page after 3 seconds, show an error
+        // This is a fallback in case the form submission failed
         setIsSubmitting(false);
         setSubmitStatus({
           success: false,
@@ -34,7 +36,7 @@ export default function DemoPage() {
         });
       }, 3000);
       
-      // The page will be redirected by FormSubmit
+      // We don't need to do anything else here since the page will redirect
       return;
       
     } catch (error) {
@@ -57,14 +59,14 @@ export default function DemoPage() {
         {/* Header/Navigation */}
         <StickyNavbar />
 
-        {/* Demo Form Section */}
+        {/* Contact Form Section */}
         <section className="relative min-h-screen w-full overflow-hidden pt-24 sm:pt-32 lg:pt-40">
           <VideoBackground />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Left side - Content */}
               <div>
-                <DemoSection />
+                <ContactSection />
               </div>
 
               {/* Right side - Form */}
@@ -84,17 +86,17 @@ export default function DemoPage() {
                         <span className="inline-block mr-2">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" 
-                              stroke="#E75010" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              stroke="#D52383" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </span>
-                        You&apos;ll receive a confirmation email shortly
+                        We&apos;ll respond within 24-48 hours
                       </p>
                     </div>
                     <button
                       onClick={resetForm}
-                      className="bg-[#E75010] hover:bg-[#D04000] text-white py-3 px-8 rounded-md font-medium transition-colors text-lg"
+                      className="bg-[#D52383] hover:bg-[#B01868] text-white py-3 px-8 rounded-md font-medium transition-colors text-lg"
                     >
-                      Request Another Demo
+                      Send Another Message
                     </button>
                   </div>
                 ) : (
@@ -104,10 +106,10 @@ export default function DemoPage() {
                     onSubmit={handleSubmit}
                   >
                     {/* FormSubmit.co configuration */}
-                    <input type="hidden" name="_subject" value="New Demo Request from Bevlytics" />
+                    <input type="hidden" name="_subject" value="New contact form submission" />
                     <input type="hidden" name="_template" value="table" />
                     <input type="hidden" name="_captcha" value="true" />
-                    <input type="hidden" name="_next" value="/bookdemo/thank-you" />
+                    <input type="hidden" name="_next" value="/contact/thank-you" />
                     <input type="text" name="_honey" style={{ display: 'none' }} />
                     
                     {submitStatus.message && !submitStatus.success && (
@@ -117,7 +119,7 @@ export default function DemoPage() {
                     )}
                     
                     <div className="mb-6">
-                      <label htmlFor="email" className="block text-white mb-2">Work Email</label>
+                      <label htmlFor="email" className="block text-white mb-2">Email Address</label>
                       <input
                         type="email"
                         id="email"
@@ -128,69 +130,47 @@ export default function DemoPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                      <div>
-                        <label htmlFor="firstName" className="block text-white mb-2">First Name</label>
-                        <input
-                          type="text"
-                          id="firstName"
-                          name="firstName"
-                          placeholder="First Name"
-                          className="w-full py-3 px-4 bg-[#252525] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#D52383]"
-                          required
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="lastName" className="block text-white mb-2">Last Name</label>
-                        <input
-                          type="text"
-                          id="lastName"
-                          name="lastName"
-                          placeholder="Last Name"
-                          className="w-full py-3 px-4 bg-[#252525] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#D52383]"
-                          required
-                        />
-                      </div>
+                    <div className="mb-6">
+                      <label htmlFor="name" className="block text-white mb-2">Full Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your Name"
+                        className="w-full py-3 px-4 bg-[#252525] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#D52383]"
+                        required
+                      />
                     </div>
 
                     <div className="mb-6">
-                      <label htmlFor="companySize" className="block text-white mb-2">Company Size</label>
-                      <select
-                        id="companySize"
-                        name="companySize"
-                        className="w-full py-3 px-4 bg-[#252525] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#D52383] appearance-none"
-                        required
-                      >
-                        <option value="" disabled selected>Please select an option</option>
-                        <option value="1-10">1-10 employees</option>
-                        <option value="11-50">11-50 employees</option>
-                        <option value="51-200">51-200 employees</option>
-                        <option value="201-500">201-500 employees</option>
-                        <option value="501+">501+ employees</option>
-                      </select>
+                      <label htmlFor="company" className="block text-white mb-2">Company</label>
+                      <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        placeholder="Your Company"
+                        className="w-full py-3 px-4 bg-[#252525] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#D52383]"
+                      />
                     </div>
 
                     <div className="mb-8">
-                      <label htmlFor="hearAbout" className="block text-white mb-2">How did you first hear about Data to insights (D2I&apos;s)</label>
-                      <select
-                        id="hearAbout"
-                        name="hearAbout"
-                        className="w-full py-3 px-4 bg-[#252525] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#D52383] appearance-none"
+                      <label htmlFor="message" className="block text-white mb-2">
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        placeholder="How can we help you?"
+                        rows={4}
+                        className="w-full py-3 px-4 bg-[#252525] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#D52383]"
                         required
-                      >
-                        <option value="" disabled selected>Please select an option</option>
-                        <option value="social">Social Media</option>
-                        <option value="search">Search Engine</option>
-                        <option value="friend">Friend or Colleague</option>
-                        <option value="event">Event or Conference</option>
-                        <option value="other">Other</option>
-                      </select>
+                      ></textarea>
                     </div>
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full ${isSubmitting ? 'bg-gray-500' : 'bg-[#D52383] hover:bg-[#A51362]'} text-white py-3 px-6 rounded-md font-medium transition-colors flex justify-center items-center`}
+                      className={`w-full ${isSubmitting ? 'bg-gray-500' : 'bg-[#D52383] hover:bg-[#B01868]'} text-white py-3 px-6 rounded-md font-medium transition-colors flex justify-center items-center`}
                     >
                       {isSubmitting ? (
                         <>
@@ -198,9 +178,9 @@ export default function DemoPage() {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          Processing...
+                          Sending...
                         </>
-                      ) : 'Book Now'}
+                      ) : 'Send Message'}
                     </button>
                   </form>
                 )}

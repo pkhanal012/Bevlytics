@@ -7,7 +7,7 @@ import ClientWrapper from '../components/ClientWrapper';
 import VideoBackground from '../components/VideoBackground';
 import DemoSection from '../components/DemoSection';
 
-export default function DemoPage() {
+export default function BookDemoPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     success?: boolean;
@@ -84,7 +84,7 @@ export default function DemoPage() {
                         <span className="inline-block mr-2">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" 
-                              stroke="#E75010" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              stroke="#D52383" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </span>
                         You&apos;ll receive a confirmation email shortly
@@ -92,7 +92,7 @@ export default function DemoPage() {
                     </div>
                     <button
                       onClick={resetForm}
-                      className="bg-[#E75010] hover:bg-[#D04000] text-white py-3 px-8 rounded-md font-medium transition-colors text-lg"
+                      className="bg-[#D52383] hover:bg-[#B01868] text-white py-3 px-8 rounded-md font-medium transition-colors text-lg"
                     >
                       Request Another Demo
                     </button>
@@ -171,26 +171,22 @@ export default function DemoPage() {
                     </div>
 
                     <div className="mb-8">
-                      <label htmlFor="hearAbout" className="block text-white mb-2">How did you first hear about Data to insights (D2I&apos;s)</label>
-                      <select
+                      <label htmlFor="hearAbout" className="block text-white mb-2">
+                        How did you first hear about Data to Insights (D2I&apos;s)
+                      </label>
+                      <input
+                        type="text"
                         id="hearAbout"
                         name="hearAbout"
-                        className="w-full py-3 px-4 bg-[#252525] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#D52383] appearance-none"
-                        required
-                      >
-                        <option value="" disabled selected>Please select an option</option>
-                        <option value="social">Social Media</option>
-                        <option value="search">Search Engine</option>
-                        <option value="friend">Friend or Colleague</option>
-                        <option value="event">Event or Conference</option>
-                        <option value="other">Other</option>
-                      </select>
+                        placeholder="How did you hear about us?"
+                        className="w-full py-3 px-4 bg-[#252525] text-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#D52383]"
+                      />
                     </div>
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full ${isSubmitting ? 'bg-gray-500' : 'bg-[#D52383] hover:bg-[#A51362]'} text-white py-3 px-6 rounded-md font-medium transition-colors flex justify-center items-center`}
+                      className={`w-full ${isSubmitting ? 'bg-gray-500' : 'bg-[#D52383] hover:bg-[#B01868]'} text-white py-3 px-6 rounded-md font-medium transition-colors flex justify-center items-center`}
                     >
                       {isSubmitting ? (
                         <>

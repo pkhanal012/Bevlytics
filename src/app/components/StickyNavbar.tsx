@@ -129,13 +129,12 @@ export default function StickyNavbar() {
             >
               About
             </a>
-            <a 
-              href="#contact" 
+            <Link 
+              href="/contact" 
               className="hover:text-gray-300 transition-colors"
-              onClick={(e) => handleNavLinkClick(e, 'contact')}
             >
               Contact
-            </a>
+            </Link>
             <ShakingButton />
           </div>
         </div>
@@ -191,13 +190,13 @@ export default function StickyNavbar() {
             >
               About
             </a>
-            <a 
-              href="#contact" 
+            <Link 
+              href="/contact" 
               className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" 
-              onClick={(e) => handleNavLinkClick(e, 'contact')}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact
-            </a>
+            </Link>
             <div className="pt-4">
               <ShakingButton />
             </div>
