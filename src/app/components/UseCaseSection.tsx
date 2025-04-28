@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import BrandName from './BrandName';
 
 interface UseCaseCardProps {
   title: string;
@@ -41,7 +42,7 @@ function UseCaseCard({ title, problemText, solutionPoints }: UseCaseCardProps) {
         {/* Solution section - right */}
         <div className="md:w-3/5 p-4 sm:p-6 md:pt-8 md:pb-8 md:pr-8 md:pl-4">
           <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-[#3D2E26] bg-opacity-40 rounded-md text-xs sm:text-sm font-medium mb-3 sm:mb-4">
-            Bevlytics Solves It:
+            <BrandName /> Solves It:
           </div>
 
           <ul className="space-y-2 sm:space-y-3">

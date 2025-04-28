@@ -9,6 +9,7 @@ import CallToAction from './components/CallToAction'
 import Footer from './components/Footer'
 import ClientWrapper from './components/ClientWrapper'
 import UseCaseSection from './components/UseCaseSection'
+import BrandName from './components/BrandName'
 import './styles/animations.css'
 
 export default function Home() {
@@ -35,8 +36,8 @@ export default function Home() {
                 <h1 className="text-left text-3xl leading-13 sm:text-3xl lg:text-5xl font-medium mb-3 sm:mb-4 text-white">
                 Powered by Semantic AI: <br />Next-Level Insights for <br />  Brewery Analytics
                 </h1>
-                <p className="text-left text-lg sm:text-sm lg:text-base text-opacity-50 text-gray-400 mb-6 sm:mb-8">
-                Bevlytics.ai leverages Semantic AI—an advanced technology combining machine learning (ML), <br /> natural language processing (NLP), and knowledge graphs—to transform raw distributor and <br /> point-of-sale (POS) data into meaningful insights that drive growth and strategic execution.
+                <p className="text-left text-lg sm:text-sm lg:text-base text-opacity-50 text-[#B4B2B3] mb-6 sm:mb-8">
+                <BrandName variant="ai" /> leverages Semantic AI—an advanced technology combining machine learning (ML), natural language processing (NLP), and knowledge graphs—to transform raw distributor and point-of-sale (POS) data into meaningful insights that drive growth and strategic execution.
                 </p>
                 <div className="flex flex-col  sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                   <a 
@@ -76,7 +77,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                 <AnimatedText 
-                  text="Unlike traditional analytics tools that rely solely on pattern recognition, Bevlytics.ai’s Semantic AI understands the meaning, context, and intent behind your brewery’s data. It connects dots across retailers, SKUs, regions, and timeframes, transforming fragmented data into a clear, actionable picture of your business."
+                  text="Unlike traditional analytics tools that rely solely on pattern recognition, bevlYtics.ai's Semantic AI understands the meaning, context, and intent behind your brewery's data. It connects dots across retailers, SKUs, regions, and timeframes, transforming fragmented data into a clear, actionable picture of your business."
                   className="max-w-4xl leading-tight text-2xl sm:text-2xl lg:text-4xl font-medium px-4"
                 />
               </div>
@@ -208,7 +209,7 @@ export default function Home() {
                   Data Upload Engine
                   </h3>
                   <p className="text-base sm:text-base lg:text-xl text-[#9CA3AF] leading-relaxed">
-                  Upload messy Excel files - Bevlytics AI Engine does the cleanup.
+                  Upload messy Excel files - <BrandName /> AI Engine does the cleanup.
 
                   </p>    
                 </div>

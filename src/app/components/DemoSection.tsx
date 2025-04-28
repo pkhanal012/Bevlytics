@@ -1,12 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import BrandName from './BrandName';
 
 export default function DemoSection() {
   return (
     <div>
       <div className="text-[#D52383] uppercase font-medium tracking-wider mb-4">FREE DEMO</div>
-      <h1 className="text-4xl md:text-5xl font-medium text-white mb-6">Get a Bevlytics Demo</h1>
+      <h1 className="text-4xl md:text-5xl font-medium text-white mb-6">Get a <BrandName /> Demo</h1>
       <p className="text-lg text-gray-300 mb-4">
         Get a free 1:1 demo with our team to understand how you can leverage 
         data to insights to level up your team and operations.

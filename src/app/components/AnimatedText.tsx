@@ -86,7 +86,7 @@ const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
       <div className="absolute -left-16 sm:-left-28 md:-left-36 top-12 float-animation z-10">
         <Image 
           src="/singlelogo.svg" 
-          alt="Bevlytics Logo" 
+          alt="bevlYtics Logo" 
           width={80} 
           height={80}
           className="w-16 h-16 sm:w-20 sm:h-20"

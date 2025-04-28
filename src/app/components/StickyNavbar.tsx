@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ShakingButton from './ShakingButton';
 import { usePathname, useRouter } from 'next/navigation';
+import BrandName from './BrandName';
 
 export default function StickyNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -94,7 +95,7 @@ export default function StickyNavbar() {
           >
             <Image 
               src="/logo.png"
-              alt="Bevlytics Logo"
+              alt="bevlYtics Logo"
               width={105}
               height={40}
               className="w-24 sm:w-[105px]"
@@ -166,7 +167,7 @@ export default function StickyNavbar() {
             >
               <Image 
                 src="/logo.png"
-                alt="Bevlytics Logo"
+                alt="bevlYtics Logo"
                 width={105}
                 height={40}
                 className="w-24 sm:w-[105px]"

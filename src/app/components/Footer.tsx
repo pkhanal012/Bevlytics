@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import BrandName from './BrandName';
 
 export default function Footer() {
   return (
@@ -36,7 +37,7 @@ export default function Footer() {
             <div className="text-white max-w-xl">
               <p className="text-base sm:text-lg lg:text-base font-base leading-relaxed px-3 text-gray-400">
                 Access detailed analytics, manage your reports, and dive deeper into
-                your brewery&apos;s insights. Contact Bevlytics for login access.
+                your brewery&apos;s insights. Contact <BrandName /> for login access.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -56,7 +57,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 sm:mt-8 pt-2 sm:pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-xs sm:text-sm text-gray-400">
-              © 2024 Bevlytics. All rights reserved.
+              © 2024 <BrandName />. All rights reserved.
             </p>
             <nav className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6" aria-label="Navigation">
               <Link href="/#solutions" className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors">Solutions</Link>
