@@ -42,7 +42,7 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <p className="text-white text-base font-semibold sm:text-base whitespace-nowrap">Already have an account?</p>
               <Link 
-                href="/login" 
+                href="https://login.bevlytics.ai" 
                 className="bg-black hover:bg-gray-900 text-white px-6 py-2.5 rounded-md transition-all duration-300 font-medium relative overflow-hidden group"
               >
                 <span className="relative z-10 uppercase tracking-wider text-sm font-semibold">LOGIN</span>
