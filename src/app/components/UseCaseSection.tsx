@@ -83,7 +83,7 @@ export default function UseCaseSection() {
       title: "Drowning in messy spreadsheets?",
       problemText: "Manual data cleaning slows down reporting and introduces errors.",
       solutionPoints: [
-        "Upload raw Excel or CSV files — Bevlytics automatically structures, validates, and transforms the data.",
+        "Upload raw Excel or CSV files — bevlYtics automatically structures, validates, and transforms the data.",
         "Eliminate human error and save hours of work each week.",
         "Standardized outputs make reporting consistent across teams."
       ]

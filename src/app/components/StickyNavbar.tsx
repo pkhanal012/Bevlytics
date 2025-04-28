@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ShakingButton from './ShakingButton';
 import { usePathname, useRouter } from 'next/navigation';
-import BrandName from './BrandName';
 
 export default function StickyNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);

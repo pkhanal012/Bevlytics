@@ -70,7 +70,7 @@ export default function CallToAction() {
               ${isVisible ? 'reveal-animation reveal-delay-300' : 'opacity-0'}
             `}
           >
-            Discover how <BrandName variant="ai" className="text-white" />'s semantic-driven analytics transform your brewery's data into actionable insights. Automate scorecards, optimize your product strategy, and boost your market performance—all powered by advanced Semantic AI.
+            Discover how <BrandName variant="ai" className="text-white" />&apos;s semantic-driven analytics transform your brewery&apos;s data into actionable insights. Automate scorecards, optimize your product strategy, and boost your market performance—all powered by advanced Semantic AI.
           </h2>
 
           <a 
