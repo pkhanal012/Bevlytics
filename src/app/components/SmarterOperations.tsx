@@ -111,7 +111,7 @@ export default function SmarterOperations() {
     },
     {
       icon: "/icons/inventory.svg",
-      title: "Live Inventory Tracking",
+      title: "ventory Tracking",
       description: "See what&apos;s in stock, where it is, and how fast it&apos;s moving."
     },
     {

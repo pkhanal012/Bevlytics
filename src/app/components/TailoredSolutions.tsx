@@ -9,11 +9,6 @@ const features = [
     description: 'Zero manual effort. Full operational clarity.'
   },
   {
-    icon: '/icons/inventory.svg',
-    title: 'Live Inventory Tracking',
-    description: "See what's in stock, where it is, and how fast it's moving."
-  },
-  {
     icon: '/icons/forecast.svg',
     title: 'AI Forecasting',
     description: 'Know what your customers will want — before they do.'
