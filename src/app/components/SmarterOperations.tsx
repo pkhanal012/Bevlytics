@@ -111,8 +111,8 @@ export default function SmarterOperations() {
     },
     {
       icon: "/icons/inventory.svg",
-      title: "ventory Tracking",
-      description: "See what&apos;s in stock, where it is, and how fast it&apos;s moving."
+      title: "Live Inventory Tracking",
+      description: "See what's in stock, where it is, and how fast it's moving."
     },
     {
       icon: "/icons/ai.svg",
@@ -147,7 +147,7 @@ export default function SmarterOperations() {
     {
       icon: "/icons/sales.svg",
       title: "Lost Sales Finder",
-      description: "Uncover the sales you didn&apos;t even know you missed."
+      description: "Uncover the sales you didn’t even know you missed."
     },
   ];
 
