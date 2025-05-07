@@ -194,7 +194,7 @@ export default function UseCaseSection() {
                 Built to Solve Your Everyday Challenges
               </h2>
               <p className="text-base sm:text-lg text-white text-opacity-90">
-                No more guesswork — just real-time answers, built for modern brewery operations.
+                No more guesswork — just real-time answers, built for modern Beverage operations.
               </p>
             </div>
           </div>

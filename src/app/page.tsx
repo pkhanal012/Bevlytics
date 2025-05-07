@@ -34,7 +34,7 @@ export default function Home() {
                   </a>
                 </div>
                 <h1 className="text-left text-3xl leading-13 sm:text-3xl lg:text-5xl font-medium mb-3 sm:mb-4 text-white">
-                Powered by Semantic AI: <br />Next-Level Insights for <br />  Brewery Analytics
+                Powered by Semantic AI: <br />Next-Level Insights for <br />  Beverage Analytics
                 </h1>
                 <p className="text-left text-lg sm:text-sm lg:text-base text-opacity-50 text-[#B4B2B3] mb-6 sm:mb-8">
                 <BrandName variant="ai" /> leverages Semantic AI—an advanced technology combining machine learning (ML), natural language processing (NLP), and knowledge graphs—to transform raw distributor and point-of-sale (POS) data into meaningful insights that drive growth and strategic execution.
@@ -77,7 +77,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                 <AnimatedText 
-                  text="Unlike traditional analytics tools that rely solely on pattern recognition, bevlYtics.ai's Semantic AI understands the meaning, context, and intent behind your brewery's data. It connects dots across retailers, SKUs, regions, and timeframes, transforming fragmented data into a clear, actionable picture of your business."
+                  text="Unlike traditional analytics tools that rely solely on pattern recognition, bevlYtics.ai's Semantic AI understands the meaning, context, and intent behind your Beverage's data. It connects dots across retailers, SKUs, regions, and timeframes, transforming fragmented data into a clear, actionable picture of your business."
                   className="max-w-4xl leading-tight text-2xl sm:text-2xl lg:text-4xl font-medium px-4"
                 />
               </div>

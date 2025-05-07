@@ -70,7 +70,7 @@ export default function CallToAction() {
               ${isVisible ? 'reveal-animation reveal-delay-300' : 'opacity-0'}
             `}
           >
-            Discover how <BrandName variant="ai" className="text-white" />&apos;s semantic-driven analytics transform your brewery&apos;s data into actionable insights. Automate scorecards, optimize your product strategy, and boost your market performance—all powered by advanced Semantic AI.
+            Discover how <BrandName variant="ai" className="text-white" />&apos;s semantic-driven analytics transform your Beverage&apos;s data into actionable insights. Automate scorecards, optimize your product strategy, and boost your market performance—all powered by advanced Semantic AI.
           </h2>
 
           <a 
@@ -84,7 +84,6 @@ export default function CallToAction() {
             `}
           >
             <span className="relative z-10 whitespace-nowrap">Request a demo</span>
-            <div className="absolute inset-0 shine-effect"></div>
             <svg 
               className="ml-2 w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 arrow-animation relative z-10" 
               fill="none" 
