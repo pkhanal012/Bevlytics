@@ -6,24 +6,40 @@ import { useState, useEffect } from 'react';
 
 export default function PoweredBy() {
   const [isGlowing, setIsGlowing] = useState(false);
+  const [isShaking, setIsShaking] = useState(false);
 
   // Periodically trigger the glow effect
   useEffect(() => {
-    const interval = setInterval(() => {
+    const glowInterval = setInterval(() => {
       setIsGlowing(true);
       // Reset after animation completes
       setTimeout(() => setIsGlowing(false), 2000);
     }, 5000);
     
-    return () => clearInterval(interval);
+    // Periodically trigger shake animation
+    const shakeInterval = setInterval(() => {
+      setIsShaking(true);
+      // Reset after animation completes
+      setTimeout(() => setIsShaking(false), 800);
+    }, 2000);
+    
+    return () => {
+      clearInterval(glowInterval);
+      clearInterval(shakeInterval);
+    };
   }, []);
 
   return (
     <div 
-      className="bg-[#121212] rounded-lg px-8 py-4 inline-block relative overflow-hidden group hover:shadow-lg hover:shadow-white/5 transition-all duration-500"
+      className={`bg-[#121212] rounded-lg px-8 py-4 inline-block relative overflow-hidden group hover:shadow-lg hover:shadow-white/5 transition-all duration-500 ${isShaking ? 'shake-animation' : ''}`}
       onMouseEnter={() => setIsGlowing(true)}
       onMouseLeave={() => setIsGlowing(false)}
-      onAnimationEnd={() => setIsGlowing(false)}
+      onAnimationEnd={(e) => {
+        // Only reset the shaking state if the shake animation ends
+        if (e.animationName === 'shake') {
+          setIsShaking(false);
+        }
+      }}
     >
       <Link 
         href="https://cloudpro.ai" 
@@ -79,6 +95,12 @@ export default function PoweredBy() {
           }
         }
         
+        @keyframes shake {
+          0%, 100% { transform: translateX(0); }
+          10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+          20%, 40%, 60%, 80% { transform: translateX(2px); }
+        }
+        
         .animate-shine {
           animation: shine 1.5s ease-in-out;
         }
@@ -100,6 +122,10 @@ export default function PoweredBy() {
             rgba(59, 130, 246, 0.1) 100%);
           background-size: 200% 200%;
           animation: glow 3s ease infinite;
+        }
+        
+        .shake-animation {
+          animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
         }
       `}</style>
     </div>
