@@ -34,7 +34,7 @@ export default function Home() {
                   </a>
                 </div>
                 <h1 className="text-left text-3xl leading-13 sm:text-3xl lg:text-5xl font-medium mb-3 sm:mb-4 text-white">
-                Powered by Semantic AI: <br />Next-Level Insights for <br />  Beverage Analytics
+                Powered by Semantic AI: <br />Next-Level Insights for <br />  Beverage Data Analytics
                 </h1>
                 <p className="text-left text-lg sm:text-sm lg:text-base text-opacity-50 text-[#B4B2B3] mb-6 sm:mb-8">
                 <BrandName variant="ai" /> leverages Semantic AI—an advanced technology combining machine learning (ML), natural language processing (NLP), and knowledge graphs—to transform raw distributor and point-of-sale (POS) data into meaningful insights that drive growth and strategic execution.
