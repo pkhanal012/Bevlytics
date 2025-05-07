@@ -92,7 +92,7 @@ export default function Home() {
               {/* Left Column - Sticky */}
               <div className="lg:col-span-5 lg:sticky lg:top-24 h-fit mb-6 sm:mb-8 lg:mb-32">
                 <h2 className="text-2xl sm:text-2xl lg:text-4xl font-medium text-white mb-3 sm:mb-4">
-                Built for Breweries. Trusted by Analysts
+                Built for Beverage Distributors. Trusted by Analysts
                 </h2>
                 <p className="text-base sm:text-base lg:text-xl text-gray-400">
                   Whether you manage stock, track sales, or coordinate with distributors — your data should work for you.
