@@ -168,27 +168,7 @@ export default function Home() {
                   </p>    
                 </div>
 
-                {/* Card 4 */}
-                <div className="bg-[#0F0E0E] border border-[#262626] C rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-12">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-6 sm:mb-8 lg:mb-12">
-                    <div className="w-full sm:w-auto sm:flex-shrink-0">
-                      <Image 
-                        src="/block4.png" 
-                        alt="Cloud Security Illustration"
-                        width={250}
-                        height={250}
-                        className="object-contain float-animation w-full sm:w-[200px] lg:w-[250px]"
-                      />
-                    </div>
-                    
-                  </div>
-                  <h3 className="text-xl sm:text-xl lg:text-2xl font-medium text-white mb-2">
-                  AI Forecasting
-                  </h3>
-                  <p className="text-base sm:text-base lg:text-xl text-[#9CA3AF] leading-relaxed">
-                  A modern, cloud-first platform designed for speed, reliability, and scale — wherever you are.
-                  </p>
-                </div>
+            
 
 
                 {/* Card 5 */}

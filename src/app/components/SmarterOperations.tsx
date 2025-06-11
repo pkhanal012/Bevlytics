@@ -115,11 +115,6 @@ export default function SmarterOperations() {
       description: "See what's in stock, where it is, and how fast it's moving."
     },
     {
-      icon: "/icons/ai.svg",
-      title: "AI Forecasting",
-      description: "Know what your customers will want — before they do."
-    },
-    {
       icon: "/icons/alert.svg",
       title: "Stock Alerts",
       description: "Stay proactive — not reactive."

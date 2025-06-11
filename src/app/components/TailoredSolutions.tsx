@@ -9,11 +9,6 @@ const features = [
     description: 'Zero manual effort. Full operational clarity.'
   },
   {
-    icon: '/icons/forecast.svg',
-    title: 'AI Forecasting',
-    description: 'Know what your customers will want — before they do.'
-  },
-  {
     icon: '/icons/alert.svg',
     title: 'Stock Alerts',
     description: 'Stay proactive — not reactive.'
