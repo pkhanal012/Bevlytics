@@ -9,7 +9,7 @@ interface ShakingButtonProps {
 export default function ShakingButton({ 
   className = "bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200",
   text = "Get a free demo",
-  href = "/demo"
+  href = "https://app.bevlytics.ai/"
 }: ShakingButtonProps) {
   const [isShaking, setIsShaking] = useState(false);
 
