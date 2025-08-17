@@ -17,7 +17,7 @@ export default function DemoSection() {
       <div className="inline-flex items-center mb-8 mt-2 border border-gray-800 px-6 py-2 rounded-full">
         <p className="text-gray-400 text-base mr-3">Already have an account?</p>
         <Link 
-          href="https://datatoinsights.ai/" 
+          href="https://app.bevlytics.ai/login/" 
           className="font-medium relative overflow-hidden"
         >
           <span className="text-white text-base lowercase border-b border-gray-500 hover:border-white transition-colors">login</span>

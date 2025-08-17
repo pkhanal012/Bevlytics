@@ -31,7 +31,7 @@ export default function Footer() {
               © 2025 <BrandName />. All rights reserved.
             </p>
             <nav className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6" aria-label="Navigation">
-            <Link href="https://datatoinsights.ai/" className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors">Login</Link>
+            <Link href="https://app.bevlytics.ai/login" className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors">Login</Link>
               <Link href="/#solutions" className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors">Solutions</Link>
               <Link href="/#use-cases" className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors">Use Cases</Link>
               <Link href="/#features" className="text-xs sm:text-sm text-gray-400 hover:text-white transition-colors">Features</Link>
