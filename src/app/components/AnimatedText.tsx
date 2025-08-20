@@ -94,14 +94,14 @@ const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
         />
       </div>
       
-      {/* Excel SVG - Right side */}
-      <div className="absolute -right-16 sm:-right-28 md:-right-36 bottom-12 float-animation z-10" style={{ animationDelay: '2s' }}>
+      {/* Semantic Card - Right side */}
+      <div className="absolute -right-24 sm:-right-28 md:-right-58 bottom-12 float-animation z-10" style={{ animationDelay: '2s' }}>
         <Image 
-          src="/excel.svg" 
-          alt="Excel Icon" 
-          width={80} 
-          height={80}
-          className="w-16 h-16 sm:w-20 sm:h-20"
+          src="/sementic_card.png" 
+          alt="Semantic Card" 
+          width={100} 
+          height={100}
+          className="w-80 h-auto sm:w-96 md:w-[32rem] lg:w-56 transform rotate-[20deg] ml-10"
           priority
         />
       </div>

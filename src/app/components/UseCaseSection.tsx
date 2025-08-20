@@ -12,25 +12,17 @@ interface UseCaseCardProps {
 function UseCaseCard({ title, problemText, solutionPoints }: UseCaseCardProps) {
   return (
     <div 
-      className="text-white rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden flex flex-col h-full"
+      className="text-white rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden flex flex-col h-full font-mono"
       style={{ 
         background: 'rgba(15, 14, 14, 0.90)',
         backdropFilter: 'blur(12.45px)',
         WebkitBackdropFilter: 'blur(12.45px)',
       }}
     >
-      {/* Title section - full width */}
-      <div className="p-4 sm:p-6 md:p-8 pb-2 sm:pb-4">
-        <h3 className="text-lg sm:text-xl md:text-2xl font-medium">{title}</h3>
-      </div>
-      
-      {/* Divider */}
-      <div className="w-full h-px bg-white opacity-10 mb-8 sm:mb-12 lg:mb-16"></div>
-      
-      {/* Content section - horizontal on larger screens */}
-      <div className="flex flex-col md:flex-row flex-grow">
-        {/* Problem section - left */}
-        <div className="md:w-2/5 p-4 sm:p-6 md:pt-8 md:pb-8 md:pl-8 md:pr-4">
+      {/* Content section - vertical layout */}
+      <div className="flex flex-col flex-grow p-4 sm:p-6 md:p-8">
+        {/* Problem section */}
+        <div className="mb-6 sm:mb-8">
           <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[#3D2E26] rounded-md text-sm sm:text-base font-medium mb-3 sm:mb-4">
             Problem
           </div>
@@ -39,10 +31,10 @@ function UseCaseCard({ title, problemText, solutionPoints }: UseCaseCardProps) {
           </p>
         </div>
         
-        {/* Solution section - right */}
-        <div className="md:w-3/5 p-4 sm:p-6 md:pt-8 md:pb-8 md:pr-8 md:pl-4">
+        {/* Solution section */}
+        <div className="flex-grow">
           <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 bg-[#3D2E26] bg-opacity-40 rounded-md text-xs sm:text-sm font-medium mb-3 sm:mb-4">
-            <BrandName /> Solves It:
+            <BrandName /> Solutions:
           </div>
 
           <ul className="space-y-2 sm:space-y-3">
@@ -66,7 +58,7 @@ function UseCaseCard({ title, problemText, solutionPoints }: UseCaseCardProps) {
 }
 
 export default function UseCaseSection() {
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const useCases = [
@@ -122,101 +114,101 @@ export default function UseCaseSection() {
     };
   }, []);
   
-  // Handle scroll-based navigation
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      
-      // Get section position relative to viewport
-      const rect = sectionRef.current.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      
-      // Check if section is in view
-      if (rect.top < viewportHeight && rect.bottom > 0) {
-        // Calculate how far we've scrolled through the section
-        const sectionHeight = rect.height;
-        
-        // We want to start the card transition after the top part of the section is visible
-        // and finish before reaching the end of the section
-        const effectiveScrollableDistance = sectionHeight - viewportHeight * 1.5; // Adjust this value to control when scrolling finishes
-        const scrolledAmount = Math.abs(Math.min(rect.top, 0));
-        
-        // Calculate progress (0 to 1)
-        const progress = Math.min(scrolledAmount / effectiveScrollableDistance, 1);
-        
-        setScrollProgress(progress);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial call
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  
-  // Calculate the max translation to ensure the last card is fully visible
-  const calculateMaxTranslation = () => {
-    // For mobile devices, we need different calculations
-    if (isMobile) {
-      const cardWidth = 80; // Full width for mobile
-      const totalCards = useCases.length;
-      return (cardWidth * (totalCards - 1)) + 8;
-    }
-    
-    // For desktop
-    const cardWidth = 50;
-    const totalCards = useCases.length;
-    return (cardWidth * (totalCards - 1)) + 4; // Show the last card fully with some right margin
+  // Navigation functions
+  const goToNext = () => {
+    setCurrentIndex(prev => Math.min(prev + 1, useCases.length - 1));
   };
   
+  const goToPrevious = () => {
+    setCurrentIndex(prev => Math.max(prev - 1, 0));
+  };
+  
+  // Calculate translation based on current index
+  const calculateTranslation = () => {
+    const cardWidth = isMobile ? 70 : 40;
+    return currentIndex * cardWidth;
+  };
+  
+  // Check if we're at the last card
+  const isAtLastCard = currentIndex >= useCases.length - 1;
+  
   return (
-    <section ref={sectionRef} id="use-cases" className="relative py-12 sm:py-16 lg:py-20 min-h-[150vh] sm:min-h-[200vh]">
+    <section ref={sectionRef} id="use-cases" className="relative py-12 sm:py-16 lg:py-20">
       {/* Background */}
       <div 
         className="absolute inset-0 w-full h-full"
         style={{
           backgroundImage: "url('/usecaseback.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: isMobile ? "scroll" : "fixed"
+          backgroundPosition: "center"
         }}
       />
       
-      {/* Sticky container for both title and cards */}
-      <div className="sticky top-0 w-full z-10" style={{ height: '100vh' }}>
-        {/* Section header */}
-        <div className="pt-20 sm:pt-24 lg:pt-32 pb-4 sm:pb-6">
+      {/* Container for title and cards */}
+      <div className="w-full z-10">
+        {/* Section header with navigation arrows */}
+        <div className="pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12">
           <div className="container mx-auto px-4">
-            <div className="max-w-2xl">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-2 sm:mb-4 text-white">
-                Built to Solve Your Everyday Challenges
-              </h2>
-              <p className="text-base sm:text-lg text-white text-opacity-90">
-                No more guesswork — just real-time answers, built for modern Beverage operations.
-              </p>
+            <div className="flex justify-between items-start">
+              <div className="max-w-2xl z-10">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-2 sm:mb-4 text-white">
+                  Built to Solve Your Everyday Challenges
+                </h2>
+                <p className="text-base sm:text-lg text-white text-opacity-90">
+                  No more guesswork — just real-time answers, built for modern Beverage operations.
+                </p>
+              </div>
+              
+              {/* Navigation arrows */}
+              <div className="flex space-x-3">
+                <button 
+                  onClick={goToPrevious}
+                  disabled={currentIndex === 0}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm ${
+                    currentIndex === 0 
+                      ? 'bg-black/30 text-white/40 cursor-not-allowed' 
+                      : 'bg-black/20 text-white hover:bg-black/40 cursor-pointer'
+                  }`}
+                >
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button 
+                  onClick={goToNext}
+                  disabled={isAtLastCard}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm ${
+                    isAtLastCard
+                      ? 'bg-black/30 text-white/40 cursor-not-allowed' 
+                      : 'bg-black/20 text-white hover:bg-black/40 cursor-pointer'
+                  }`}
+                >
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
         
-        {/* Card container - full width */}
-        <div className="w-full py-4 sm:py-6 z-10 flex-grow">
-          <div className="w-full h-full flex items-center">
+        {/* Card container */}
+        <div className="w-full py-4 sm:py-6 z-10">
+          <div className="w-full flex items-center justify-center">
             {/* Cards container */}
-            <div className="overflow-hidden w-full">
+            <div className="overflow-hidden w-full max-w-6xl">
               <div 
-                className="flex space-x-3 sm:space-x-6 transition-transform duration-300 ease-out"
+                className="flex space-x-3 sm:space-x-6 transition-transform duration-500 ease-out"
                 style={{ 
-                  transform: `translateX(-${scrollProgress * calculateMaxTranslation()}%)`,
-                  paddingLeft: isMobile ? "5%" : "8%",
-                  paddingRight: "2%"
+                  transform: `translateX(-${calculateTranslation()}%)`
                 }}
               >
                 {useCases.map((useCase, index) => (
                   <div 
                     key={index}
-                    className="flex-shrink-0 w-[90%] sm:w-[85%] md:w-[calc(85%-1rem)] lg:w-[calc(65%-1rem)]"
+                    className={`flex-shrink-0 w-[70%] sm:w-[80%] md:w-[calc(50%-1rem)] lg:w-[calc(40%-1rem)] ${
+                      index === useCases.length - 1 ? 'mr-[20px]' : ''
+                    }`}
                   >
                     <UseCaseCard
                       title={useCase.title}
@@ -230,9 +222,6 @@ export default function UseCaseSection() {
           </div>
         </div>
       </div>
-      
-      {/* Spacer to allow scrolling past the sticky section */}
-      <div className="h-[80vh] sm:h-[100vh]"></div>
     </section>
   );
 } 
