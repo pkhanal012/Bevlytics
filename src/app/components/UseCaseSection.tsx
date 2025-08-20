@@ -4,12 +4,11 @@ import { useState, useEffect, useRef } from 'react';
 import BrandName from './BrandName';
 
 interface UseCaseCardProps {
-  title: string;
   problemText: string;
   solutionPoints: string[];
 }
 
-function UseCaseCard({ title, problemText, solutionPoints }: UseCaseCardProps) {
+function UseCaseCard({ problemText, solutionPoints }: UseCaseCardProps) {
   return (
     <div 
       className="text-white rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden flex flex-col h-full font-mono"
@@ -211,7 +210,6 @@ export default function UseCaseSection() {
                     }`}
                   >
                     <UseCaseCard
-                      title={useCase.title}
                       problemText={useCase.problemText}
                       solutionPoints={useCase.solutionPoints}
                     />
