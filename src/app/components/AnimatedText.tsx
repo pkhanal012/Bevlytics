@@ -66,7 +66,9 @@ const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
 
     // Handle resize events
     const handleResize = () => {
-      ScrollTrigger.refresh();
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
     };
 
     window.addEventListener('resize', handleResize);
@@ -75,7 +77,9 @@ const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
       if (timelineRef.current) {
         timelineRef.current.kill();
       }
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      }
       window.removeEventListener('resize', handleResize);
     };
   }, [text]);
