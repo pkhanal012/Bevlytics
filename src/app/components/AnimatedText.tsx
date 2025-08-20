@@ -94,14 +94,14 @@ const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
         />
       </div>
       
-      {/* Semantic Card - Right side */}
-      <div className="absolute -right-24 sm:-right-28 md:-right-58 bottom-12 float-animation z-10" style={{ animationDelay: '2s' }}>
+      {/* Semantic Card - Right side on desktop, bottom on mobile */}
+      <div className="absolute sm:-right-28 md:-right-58 bottom-12 sm:bottom-12 float-animation z-10 right-1/2 transform translate-x-1/2 sm:translate-x-0 sm:right-auto" style={{ animationDelay: '2s' }}>
         <Image 
           src="/sementic_card.png" 
           alt="Semantic Card" 
           width={100} 
           height={100}
-          className="w-80 h-auto sm:w-96 md:w-[32rem] lg:w-56 transform rotate-[20deg] ml-10"
+          className="w-80 h-auto sm:w-96 md:w-[32rem] lg:w-56 transform rotate-[20deg] ml-10 sm:ml-10 ml-0"
           priority
         />
       </div>
