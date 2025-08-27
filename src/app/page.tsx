@@ -41,10 +41,10 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col  sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                   <a 
-                    href="https://app.bevlytics.ai/" 
+                    href="/demo" 
                     onClick={(e) => {
                       e.preventDefault();
-                      window.location.href = "https://app.bevlytics.ai/";
+                      window.location.href = "/demo";
                     }}
                     className="w-full sm:w-auto text-center bg-white text-black px-4 sm:px-6 py-2.5 sm:py-3 rounded-md hover:bg-gray-200 transition-colors text-base sm:text-base relative overflow-hidden"
                   >
