@@ -99,7 +99,7 @@ export default function DemoPage() {
                   </div>
                 ) : (
                   <form 
-                    action="https://formsubmit.co/pkhanal012@gmail.com,nkuinkel@cloudproai.com,sales@cloudproai.com" 
+                    action="https://formsubmit.co/pkhanal012@gmail.com" 
                     method="POST"
                     onSubmit={handleSubmit}
                   >
