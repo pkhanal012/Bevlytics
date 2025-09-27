@@ -109,8 +109,9 @@ export default function ContactPage() {
                     <input type="hidden" name="_subject" value="New contact form submission" />
                     <input type="hidden" name="_template" value="table" />
                     <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_next" value="https://bevlytics.vercel.app/contact/thank-you" />
+                    <input type="hidden" name="_next" value="https://www.bevlytics.ai/contact/thank-you" />
                     <input type="hidden" name="_autoresponse" value="Thank you for contacting us! We'll get back to you soon." />
+                    <input type="hidden" name="_url" value="https://www.bevlytics.ai" />
                     <input type="text" name="_honey" style={{ display: 'none' }} />
                     
                     {submitStatus.message && !submitStatus.success && (
