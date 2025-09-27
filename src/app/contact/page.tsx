@@ -101,15 +101,16 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form 
-                    action="https://formsubmit.co/pkhanal012@gmail.com" 
+                    action="https://formsubmit.co/pkhanal012@gmail.com?subject=Contact Form Submission" 
                     method="POST"
                     onSubmit={handleSubmit}
                   >
                     {/* FormSubmit.co configuration */}
                     <input type="hidden" name="_subject" value="New contact form submission" />
                     <input type="hidden" name="_template" value="table" />
-                    <input type="hidden" name="_captcha" value="true" />
-                    <input type="hidden" name="_next" value="/contact/thank-you" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="https://bevlytics.vercel.app/contact/thank-you" />
+                    <input type="hidden" name="_autoresponse" value="Thank you for contacting us! We'll get back to you soon." />
                     <input type="text" name="_honey" style={{ display: 'none' }} />
                     
                     {submitStatus.message && !submitStatus.success && (

@@ -106,8 +106,9 @@ export default function BookDemoPage() {
                     {/* FormSubmit.co configuration */}
                     <input type="hidden" name="_subject" value="New Demo Request from Bevlytics" />
                     <input type="hidden" name="_template" value="table" />
-                    <input type="hidden" name="_captcha" value="true" />
-                    <input type="hidden" name="_next" value="/bookdemo/thank-you" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="https://bevlytics.vercel.app/bookdemo/thank-you" />
+                    <input type="hidden" name="_autoresponse" value="Thank you for your demo request! We'll get back to you soon." />
                     <input type="text" name="_honey" style={{ display: 'none' }} />
                     
                     {submitStatus.message && !submitStatus.success && (
