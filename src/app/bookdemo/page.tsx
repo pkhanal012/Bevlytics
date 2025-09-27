@@ -99,7 +99,7 @@ export default function BookDemoPage() {
                   </div>
                 ) : (
                   <form 
-                    action="https://formsubmit.co/3e18078a374b335b04f6137eb55f34bf" 
+                    action="https://formsubmit.co/pkhanal012@gmail.com,nkuinkel@cloudproai.com,sales@cloudproai.com" 
                     method="POST"
                     onSubmit={handleSubmit}
                   >
