@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface ShakingButtonProps {
   className?: string;
@@ -6,10 +6,10 @@ interface ShakingButtonProps {
   href?: string;
 }
 
-export default function ShakingButton({ 
+export default function ShakingButton({
   className = "bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200",
   text = "Get a free demo",
-  href = "/demo"
+  href = "/bookdemo",
 }: ShakingButtonProps) {
   const [isShaking, setIsShaking] = useState(false);
 
@@ -39,10 +39,10 @@ export default function ShakingButton({
   return (
     <a
       href={href}
-      className={`${className} ${isShaking ? 'animate-shake' : ''}`}
+      className={`${className} ${isShaking ? "animate-shake" : ""}`}
       onAnimationEnd={handleAnimationEnd}
     >
       {text}
     </a>
   );
-} 
+}
