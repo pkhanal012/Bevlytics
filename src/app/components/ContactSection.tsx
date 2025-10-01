@@ -16,7 +16,7 @@ export default function ContactSection() {
       <div className="inline-flex items-center mb-8 mt-2 border border-gray-800 px-6 py-2 rounded-full">
         <p className="text-gray-400 text-base mr-3">Looking for a demo instead?</p>
         <Link 
-          href="/bookdemo" 
+          href="/demo" 
           className="font-medium relative overflow-hidden"
         >
           <span className="text-white text-base border-b border-gray-500 hover:border-white transition-colors">Book a demo</span>

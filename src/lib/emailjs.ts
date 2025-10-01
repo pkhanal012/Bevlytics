@@ -20,6 +20,7 @@ export const sendDemoEmail = async (data: {
   email: string;
   firstName: string;
   lastName: string;
+  phone: string;
   companySize: string;
   hearAbout: string;
 }) => {
@@ -32,12 +33,13 @@ export const sendDemoEmail = async (data: {
         from_email: data.email,
         first_name: data.firstName,
         last_name: data.lastName,
+        phone: data.phone,
         product: "Bevlytics",
         full_name: `${data.firstName} ${data.lastName}`,
         company_size: data.companySize,
         hear_about: data.hearAbout,
         subject: "New Request",
-        message: `Bevlytics: New demo request from ${data.firstName} ${data.lastName} (${data.email}). Company size: ${data.companySize}. How they heard about us: ${data.hearAbout}`,
+        message: `Bevlytics: New demo request from ${data.firstName} ${data.lastName} (${data.email}). Phone: ${data.phone || 'Not provided'}. Company size: ${data.companySize}. How they heard about us: ${data.hearAbout}`,
       }
     );
     return { success: true, result };

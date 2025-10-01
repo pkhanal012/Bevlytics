@@ -41,7 +41,7 @@ export default function ThankYouPage() {
               </div>
               <div className="flex space-x-4 justify-center">
                 <Link
-                  href="/bookdemo"
+                  href="/demo"
                   className="bg-[#D52383] hover:bg-[#B01868] text-white py-3 px-8 rounded-md font-medium transition-colors text-lg"
                 >
                   Request Another Demo
@@ -62,4 +62,4 @@ export default function ThankYouPage() {
       </main>
     </ClientWrapper>
   );
-} 
+}
